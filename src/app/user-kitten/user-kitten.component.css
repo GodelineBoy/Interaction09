@@ -1,0 +1,36 @@
+.barreFavorite {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    
+}
+h1{
+    color: white;
+    padding-left: 40px;
+}
+.logoAdopt{
+    width: 100%;
+    border-radius: 6px;
+    
+}
+.container{
+    width: 10%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1;    
+}
+.card-body{
+width: 100%;
+height: 100%;
+display: none;
+top: 0;
+}
+.card-img-top{
+    width: 190px;
+}
+.card-img-top:hover + .card-body{
+    color: white;
+    display: block;
+}

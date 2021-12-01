@@ -1,0 +1,25 @@
+<!--Liste de chatons-->
+
+<app-create-kitten (sendNewKitten) = "addNewKitten($event)"></app-create-kitten>
+
+<div class="list-kitten-container">
+  <div *ngIf="kittens.length > 0; else noKitten" class="cardContainer"> 
+    <div *ngFor='let kitten of kittens' class="card">
+<!--Récupération par interpolation des valeurs données par carte selon model {{(Objet.propriété)}} -->
+      <img src="{{kitten.picture}}" class="card-img-top" alt="mini kitten">
+        <div class="card-body">
+          <p class="card-title">{{kitten.name}}</p>
+          <p class="card-text">{{kitten.race}}</p>
+          <p class="card-text">{{kitten.birthday}}</p>
+          <button class="btn btn-primary" type="button" (click)="addKittenOnFavorite(kitten)">Adopter</button>
+        </div>
+    </div>
+  </div> 
+</div>
+
+<ng-template #noKitten>
+  <p> Il n'y a pas de chaton a ajouter.</p>
+</ng-template>
+
+<app-user-kitten [favoriteKittens]= "adoptKitten"></app-user-kitten>
+

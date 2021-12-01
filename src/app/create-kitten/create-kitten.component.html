@@ -1,0 +1,39 @@
+<!--formulaire de chatons-->
+<div class="page">
+<div class="containerTitre">
+  <h1>AJOUTER UN CHATON : </h1>
+  <img src="assets/3780512.jpg" alt="logo chats à adopter" class="imgAdoptCat"/>
+</div>
+
+<form [formGroup]="kittenForm" (ngSubmit)='kittenForm.valid && createNewKitten()' #kitten='ngForm' class="form">
+    
+
+      <div class="form-group col-md-6">
+        <label for="nameKitten" class="form-label">Name : </label>
+        <input type="text" class="form-control" id="nameKitten" formControlName="nameKitten">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="raceKitten" class="form-label">Race : </label>
+        <input type="text" class="form-control" id="raceKitten" formControlName="raceKitten">
+      </div>
+
+    
+
+    <div class="form-group col-md-6">
+      <label for="birthdayKitten" class="form-label">Birthday : </label>
+      <input type="date" class="form-control" id="birthdayKitten" formControlName="birthdayKitten">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="pictureKitten" class="form-label">Picture : </label>
+      <input type="text" class="form-control" id="pictureKitten" formControlName="pictureKitten">
+    </div>
+          
+  <div class="button">
+    <button type="submit" [disabled]="kitten.invalid" class="btn btn-primary">Envoyer</button>
+  </div>
+  </form>
+
+  <p class="addMessage" *ngIf="kittenAdd">Votre chaton à bien été ajouté ! </p>
+</div>

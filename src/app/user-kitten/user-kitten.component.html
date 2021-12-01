@@ -1,0 +1,25 @@
+<!--barre sur le cote referencant mes chatons favoris-->
+<div class="container">
+<div class="barreFavorite">
+  <img src="assets/3806629.jpg" alt="photo adoption" class="logoAdopt"/>
+  <h1>Mes chatons préférés ! </h1>
+</div>
+
+<div class="card-img" style="width: 18rem;">
+ 
+    <div *ngFor='let kittenFavorite of favoriteKittens' class='card'>
+    <!--Récupération par interpolation des valeurs données par carte selon model {{(Objet.propriété)}} -->
+        <img src="{{kittenFavorite.picture}}" class="card-img-top" alt="mini kitten">
+        <div class="card-body">
+          
+          <p class="card-title">{{kittenFavorite.name}}</p>
+          <p class="card-text">{{kittenFavorite.race}}</p>
+          <p class="card-text">{{kittenFavorite.birthday}}</p>
+    
+          
+          <button class="btn btn-primary" type="button">Adopter</button>
+        </div>
+      </div>
+    </div>
+
+  </div>   
